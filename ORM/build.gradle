@@ -1,0 +1,35 @@
+allprojects {
+    version = '1.0'
+}
+
+subprojects {
+    apply plugin: 'java'
+    sourceCompatibility = 1.8
+
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        compile 'org.hsqldb:hsqldb:+'
+    }
+}
+
+project(':Hibernate') {
+    dependencies {
+        compile 'org.hibernate:hibernate-core:+'
+    }
+}
+
+project(':JPA') {
+    dependencies {
+        compile 'org.hibernate:hibernate-core:+',
+                'org.hibernate:hibernate-entitymanager:+'
+    }
+}
+
+//task "create-dirs" << {
+//    subprojects.each{it.sourceSets*.java.srcDirs*.each { it.mkdirs() }}
+//    subprojects.each{it.sourceSets*.resources.srcDirs*.each { it.mkdirs() }}
+//}
+
