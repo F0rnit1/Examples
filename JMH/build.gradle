@@ -1,0 +1,21 @@
+plugins {
+    id 'me.champeau.gradle.jmh' version '0.2.0'
+}
+
+apply plugin: 'me.champeau.gradle.jmh'
+
+apply plugin: 'java'
+sourceCompatibility = 1.8
+version = '1.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'org.openjdk.jmh:jmh-core:+',
+            'org.openjdk.jmh:jmh-generator-annprocess:+',
+            'org.apache.commons:commons-lang3:+',
+            'commons-io:commons-io:+',
+            'com.google.guava:guava:18.0'
+}
